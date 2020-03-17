@@ -43,7 +43,7 @@ class ReportingService {
         return
       }
       
-      completion(launch.id)
+      completion(launch.uuid)
     }
   }
   
@@ -57,7 +57,7 @@ class ReportingService {
         )
         
         do {
-          try self.httpClient.callEndPoint(endPoint) { (result: Launch) in
+          try self.httpClient.callEndPoint(endPoint) { (result: StartLaunch) in
             self.launchID = result.id
             self.semaphore.signal()
           }
