@@ -15,7 +15,7 @@ struct GetCurrentLaunchEndPoint: EndPoint {
   
   init() {
     parameters = [
-      "page.sort": "start_time"
+      "page.sort": "startTime"
     ]
   }
   
