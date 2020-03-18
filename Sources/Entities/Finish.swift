@@ -8,17 +8,6 @@
 
 import Foundation
 
-enum FinishKeys: String, CodingKey {
-  case msg = "msg"
-}
-
-
 struct Finish: Decodable {
   let message: String
-  
-  init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: FinishKeys.self)
-    message = try container.decode(String.self, forKey: .msg)
-  }
-  
 }
