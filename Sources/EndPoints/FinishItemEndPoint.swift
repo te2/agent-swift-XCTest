@@ -19,12 +19,14 @@ struct FinishItemEndPoint: EndPoint {
 	let issue = status == .failed ? [
 		"comment": "",
 		"issue_type": "ti001"
-		] : [:]
-    parameters = [
-      "end_time": TimeHelper.currentTimeAsString(),
-      "issue": issue,
-      "status": status.rawValue
-    ]
+		] : nil
+	var params: [String: Any] = [
+		"end_time": TimeHelper.currentTimeAsString(),
+		"status": status.rawValue
+	]
+	params["issue"] = issue
+	
+	parameters = params
   }
   
 }
